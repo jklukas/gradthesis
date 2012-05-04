@@ -1,0 +1,28 @@
+\begin{tikzpicture}[thin, level/.style = {level distance = 1.6cm, line width = 1pt} ]
+  \coordinate 
+  child[grow = 150] { 
+    edge from parent [fermion, backwards] node [above = 2pt] {$q$} 
+  }
+  child[grow = -150] { 
+    edge from parent [fermion, forwards] node [below = 2pt] {$q^\prime$} 
+  }
+  child[grow = east] { 
+    child[grow = east] {
+      child[grow = 30] {
+        child[grow = 15] {
+          edge from parent [fermion, forwards] node [above = 0pt] {$\ell$}}
+        child[grow = -15] {
+          edge from parent [fermion, backwards] node [below = 0pt] {$\nu_\ell$}}
+        edge from parent [boson] node [above = 2pt] {$W$}}
+      child[grow = -30] { 
+        child[grow = 15] {
+          edge from parent [fermion, forwards] node [above = 0pt] {$\ell^\prime$}}
+        child[grow = -15] {
+          edge from parent [fermion, backwards] node [below = 0pt] {$\ell^\prime$}}
+        edge from parent [boson] node [below = 2pt] {$Z$}}
+      edge from parent [technihadron] node [above = 0pt] {\technirho}
+    }
+    edge from parent [boson] node [above = 0pt] {$W$}
+  }
+  ;
+\end{tikzpicture}

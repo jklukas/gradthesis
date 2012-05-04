@@ -1,0 +1,16 @@
+%%%% This assumes you're using XeLaTeX.
+%%%% It sets up Minion Pro for roman text and math,
+%%%% a bold, red Myriad Pro for sans-serif text,
+%%%% and a scaled-down (to blend in better) Menlo for monospaced text.
+
+\usepackage[MnSymbol]{mathspec}         % Load Minion Pro math font
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\usepackage{scalefnt}
+\defaultfontfeatures{Scale=MatchLowercase}
+
+\setprimaryfont{Minion Pro}
+\setromanfont[Mapping=tex-text,Numbers=OldStyle,Ligatures=Common]{Minion Pro}
+\setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro Bold}
+\setmonofont[Mapping=tex-text,Scale=0.8]{Menlo} 
+\setmathsfont[Set=Greek,Uppercase=Italic,Lowercase=Italic]{Minion Pro}

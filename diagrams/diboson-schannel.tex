@@ -1,0 +1,17 @@
+\begin{tikzpicture}[thin, level/.style = {level distance = 1.6cm, line width = 1pt} ]
+  \coordinate 
+  child[grow = 150] { 
+    edge from parent [fermion, backwards] node [above = 2pt] {$q$} 
+  }
+  child[grow = -150] { 
+    edge from parent [fermion, forwards] node [below = 2pt] {$q^\prime$} 
+  }
+  child[grow = east] { 
+    child[grow = 30] {
+      edge from parent [boson] node [above = 2pt] {$W$}}
+    child[grow = -30] { 
+      edge from parent [boson] node [below = 2pt] {$\gamma$}}
+    edge from parent [boson] node [above = 0pt] {$W$}
+  }
+  ;
+\end{tikzpicture}

@@ -1,0 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Setup for uwthesis package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{uwthesis}
+
+\settitle{a search for exotic particles \\ decaying to $WZ$ pairs \\ in $pp$ collisions at $\sqrt{s} = 7\;\textnormal{\TeV}$}
+\setauthor{Jeffrey Klukas}
+\setdepartment{Physics}
+\doctors
+\setgraddate{2012}
+\setdefensedate{May 2, 2012}
+
+\setfoca{Matthew Herndon}{Associate Professor}{Physics}
+\setfocb{Sridhara Dasu}{Professor}{Physics}
+\setfocc{Wesley Smith}{Professor}{Physics}
+\setfocd{Lisa Everett}{Professor}{Physics}
+\setfoce{Robert Mathieu}{Professor}{Astronomy}
+
+\setabstract{%
+A search for exotic particles decaying via $WZ$ to final states with electrons and muons is performed using a data sample of $pp$ collisions collected at \SI{7}{\TeV} center-of-mass energy by the CMS experiment at the LHC, corresponding to an integrated luminosity of \jsonlumi.  A cross section measurement for the production of $WZ$ is also performed on a subset of the collision data.  No significant excess is observed over the Standard Model background, so lower bounds at the 95\% confidence level are set on the production cross sections of hypothetical particles decaying to $WZ$ in several theoretical scenarios.  Assuming the Sequential Standard Model, \wprime{} bosons with masses below \wprimelimit{} are excluded.  New limits are also set for several configurations of Low-Scale Technicolor.
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Define macros for use throughout the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\earlylumi}{\SI{1.09}{\fbinv}}
+\newcommand{\deliveredlumi}{\SI{6.10}{\fbinv}}
+\newcommand{\recordedlumi}{\SI{5.56}{\fbinv}}
+\newcommand{\jsonlumi}{\SI{4.98}{\fbinv}}
+\newcommand{\wprimelimit}{\simass{1143}}
+\newcommand{\tclimitlh}{\simass{687}}
+\newcommand{\tclimitlhlower}{\simass{167}}
+\newcommand{\tclimitdzero}{\simass{938}}
+\newcommand{\tclimitdzerolower}{\simass{180}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Load other packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{myfonts}
+\usepackage{myterms}
+\usepackage{multirow}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage[pagebackref,final]{hyperref}
+\usepackage[detect-all,retain-zero-exponent=true]{siunitx}
+\usepackage{calc}
+
+%% Configure line numbering; switched on later with \linenumbers.
+\usepackage{lineno}
+\let\oldchapter\chapter
+\renewcommand{\chapter}[1]{\resetlinenumber\oldchapter{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Load and configure tikz for Feynman diagrams
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{trees}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\definecolor{jblue}          {RGB}{ 20,  50, 100}
+\definecolor{npurple}        {RGB}{153,  51, 204}
+\definecolor{wred}           {RGB}{217,   0,  56}
+\definecolor{white}          {RGB}{255, 255, 255}  
+\definecolor{korange}        {RGB}{235,  80,  43}
+\definecolor{korange2}       {RGB}{245, 100,  63}
+\definecolor{kyelloworange}  {RGB}{255, 210, 110}
+\definecolor{kyelloworange2} {RGB}{240, 170,  90}
+\definecolor{kred}           {RGB}{204, 102, 153}
+\definecolor{kpurple}        {RGB}{153,  61, 190}
+\definecolor{kpurplelight}   {RGB}{213, 161, 230}
+\tikzset {
+  dashStyle/.style = {dash pattern = on 5pt off 5pt},
+  forwards/.style = {
+    postaction={decorate},
+    decoration={markings,mark=at position .50 with {\arrow[draw=black]{>}}},
+  },
+  backwards/.style = {
+    postaction={decorate},
+    decoration={markings,mark=at position .50 with {\arrow[draw=black]{<}}},
+  },
+  fermion/.style = {
+    draw       = black,
+  },
+  boson/.style = {
+    decorate,
+    decoration = {snake, amplitude = 2pt, segment length = 6pt},
+    draw       = black
+  },
+  gluon/.style = {
+    decorate,
+    draw       = black,
+    decoration = {coil, amplitude = 2pt, segment length = 3pt}
+  },
+  technihadron/.style = {
+    decorate,
+    draw       = black,
+    style      = double
+  }
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Set memoir styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newsubfloat{figure}
+\chapterstyle{wilsondob}
+\captionnamefont{\sffamily}
+\tightlists % reduce spacing between items in lists

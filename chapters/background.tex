@@ -1,0 +1,160 @@
+\chapter{Background Studies}
+\label{chapter:background}
+
+As discussed in Sec.~\ref{sec:mc-samples}, the background processes expected to contribute to the three-lepton final state consist primarily of genuine \wtolnu{} or \ztoll{} decays along with some number of additional jets misidentified as leptons.  Because of the low probability for a jet to satisfy the lepton identification criteria, the expected contribution from a given process diminishes as the number of jets needed to fake a $WZ$ signal increases.  Accordingly, the primary concern is \Zjets{} events where only one misidentified lepton is sufficient to cause contamination, motivating a data-driven estimation method which also measures a portion of the \ttbar{} background (discussed in Sec.~\ref{sec:matrix-method}).  Other background sources are estimated from MC simulation where possible with agreement between the collision data and simulation evaluated in various ``control regions'' (Sec.~\ref{sec:control-regions}).  For the resonance search, all backgrounds are taken from simulation, considering samples representing diboson processes with extra jets ($WW$, $WZ$, $ZZ$, $Z\gamma$, and $W\gamma$) along with \Zjets, \Wjets, and \ttbar.  For the $WZ$ cross section measurement, only $ZZ$ and $Z\gamma$ are taken from simulation; data-driven methods are used directly to account for all other background contributions.
+
+\section{\emph{Z} + jets Background Estimation}
+\label{sec:matrix-method}
+
+When possible, it is advantageous to reduce a measurement's reliance on the quality of MC simulation by performing investigations directly in the collision data.  In particular, we would like to define a method to extract an estimate of the yield of dominant background processes in our final signal sample which can then be used to replace or verify the Monte Carlo results.
+To that end, we use the ``matrix method''~\cite{CMS-PAS-EWK-11-010} to perform a data-driven estimation of the contribution to the signal region from backgrounds where a misidentified jet accompanies a $Z$ candidate formed from real leptons; this will be primarily composed of \Zjets{} events, although there may also be small contributions from \ttbar{} and $WW$ processes.  The resulting estimates are used directly in the cross section measurement discussed in Chapter~\ref{chapter:cross-section} and indirectly as a check on the simulated yields for the resonance search in Chapter~\ref{chapter:limits}.
+
+The matrix method seeks to compare the number \nlep of $WZ$ candidate events where the $W$ decay has been associated with a genuine electron or muon to the number \njet of events where the lepton candidate for the $W$ decay is in fact a misidentified jet.  These numbers, of course, are not directly observable in collision data, so we instead count the number \ntight of events passing all selection criteria for $W$ and $Z$ candidates and compare this to the superset of events \nloose obtained by removing the isolation requirement on the lepton candidate assigned to the $W$ decay.  By carefully measuring the efficiency \etight of the isolation criteria for real leptons and the corresponding efficiency (or, from another perspective, ``fake rate'') \pfake for misidentified jets, we obtain a system of equations which allow us to obtain values for \nlep{} and \njet:
+\begin{align}
+  \nloose &= \nlep + \njet \\
+  \ntight &= \etight\cdot\nlep + \pfake\cdot\njet.
+\end{align}
+
+\begin{table}
+  \centering
+  \newcommand{\ph}{}
+  \begin{tabular}{l r@{$\,\pm\,$}l}
+    \toprule
+    Measurement & \multicolumn{2}{c}{Efficiency/\%} \\
+    \midrule
+    $\etight(e)$   & 93.59 & 0.04 \\
+    $\etight(\mu)$ & 97.11 & 0.02 \\
+    $\pfake(e)$    &  7\ph & 1\ph \\
+    $\pfake(\mu)$  &  6\ph & 1\ph \\
+    \bottomrule
+  \end{tabular}
+  \caption{Measured isolation efficiencies for genuine leptons and misidentified jets.}
+  \label{tab:efficiencies}
+\end{table}
+
+We apply the tag and probe method in independent samples of collision data as described below to determine the \etight{} and \pfake{} values for electrons and muons given in Table~\ref{tab:efficiencies}.  The final background estimate is determined separately for each mass window, with the data-driven results compared to generator-level information in MC samples in Table~\ref{tab:matrix-results}.
+
+\begin{table}
+  \centering 
+  \begin{tabular}{ c r@{$\pm$}l r@{$\pm$}l r@{$\pm$}l }
+    \toprule
+    $M(\wprime)c^2/\GeV$ & \multicolumn{2}{c}{$\etight\cdot\nlep$} & \multicolumn{2}{c}{$\pfake\cdot\njet$} & \multicolumn{2}{c}{$N_\text{lep}^\text{MC}$} \\
+    \midrule
+    \phantom{0}200 & \phantom{00}46 & 7 & 6.4 & 0.9 & 41 & 6 \\
+    \phantom{0}250 & 36 & 6 & 3.7 & 0.6 &  27 & 5 \\
+    \phantom{0}300 & 19 & 5 & 3.6 & 0.6 &  19 & 4 \\
+    \phantom{0}400 & 6 & 3 & 1.2 & 0.3 &  11 & 3 \\
+    \phantom{0}500 & 8 & 3 & 0.6 & 0.2 &  6 & 3 \\
+    \phantom{0}600 & 2 & 1 & 0.1 & 0.1 & 3 & 2 \\
+    \phantom{0}700 & 2 & 1 & 0.1 & 0.1 & 2 & 1 \\
+    \phantom{0}800 & 1 & 1 & 0.1 & 0.1 & 0.9 & 0.9 \\
+    \phantom{0}900 & 0 & 0 & 0 & 0 & 0.9 & 0.9 \\
+              1000 & 0 & 0 & 0 & 0 &  0.7 & 0.8 \\
+              1100 & 0 & 0 & 0 & 0 &  0.5 & 0.7 \\
+              1200 & 0 & 0 & 0 & 0 &  0.4 & 0.6 \\
+              1300 & 0 & 0 & 0 & 0 &  0.3 & 0.5 \\
+              1400 & 0 & 0 & 0 & 0 &  0.2 & 0.4 \\
+              1500 & 0 & 0 & 0 & 0 & 0.1 & 0.3 \\
+    \bottomrule
+  \end{tabular}
+  \caption[Results of the matrix method for background estimation]{Expected numbers of selected events with the $W$ decay assigned to either a genuine lepton or a misidentified jet.  The measured number of true leptons $\etight\cdot\nlep$ may be compared with the expected number of signal-like events with isolated leptons based on Monte Carlo information in the final column.}
+  \label{tab:matrix-results}
+\end{table}
+
+\subsection{Measurement of Isolation Efficiency for Genuine Leptons}
+For the \etight{} measurement, we want to define some collection of lepton candidates that has a high purity of genuine leptons, but without using any isolation criterion that would bias our measurement.  This is accomplished through the same tag and probe method employed in the measurement of lepton selection efficiencies in Sec.~\ref{sec:lepton-selection-efficiency}.  We define a $Z$-enriched region in the collision data by selecting events with exactly one pair of same-flavor, opposite-charge leptons with $\pt > \simomentum{10}$ and invariant mass between \simass{60} and \simass{120}.  Both leptons must pass the identification criteria imposed on candidates for the $W$ decay and at least one must pass the associated isolation requirement, serving as the tag object.  The remaining lepton candidate serves as the probe.
+
+The resulting dataset is dominated by \Zjets, but also includes some \ttbar, $WZ$, and \Wjets events.  The processes with a genuine \ztoll{} decay contribute to a peak in the invariant mass distribution while the \ttbar and \Wjets contributions tend to be evenly distributed across the invariant mass range.  To obtain a best estimate of the number of genuine \ztoll{} events within the sample, we make a linear fit to the sidebands ([70,80] and [100,110] \GeVcc) of the invariant mass distribution and use this to subtract the non-peaking events.
+
+The value of \etight{} is obtained by counting the total number of events with the probe passing isolation $N_\text{pass}$ and the total number of events with the probe failing isolation $N_\text{fail}$, subtracting the estimated contributions to each of these distributions from the linear fits $B_\text{pass}$ and $B_\text{fail}$, and taking the ratio of passing events to total events:
+\begin{equation}
+  \etight = \frac{2(N_\text{pass} - B_\text{pass})}{(N_\text{fail} - B_\text{fail}) + 2(N_\text{pass} - B_\text{pass})}.
+\end{equation}
+
+\subsection{Measurement of Isolation Efficiency for Misidentified Jets}
+To measure \pfake{}, we need to define some collection of lepton candidates which we believe with a high confidence to be from jets, but without using any isolation criterion which would bias the measurement.  Because the interaction topologies are very similar for the production of charged and neutral vector bosons at the LHC, we expect a similar spectrum of jets in events with a $W$ when compared to events with a $Z$.  As a result, we can perform the \pfake{} measurement on a $W$-enriched sample in the collision data where we have eliminated \ztoll{} decays.  In order to define a region dominated by \Wjets, we select events with a lepton (serving as tag) which meets the identification and isolation criteria imposed on candidates for the $W$ decay along with $\MET > \simass{20}$, $\mt(W) > \simass{20}$, and exactly one additional lepton candidate with opposite flavor (since $Z$ decays can never give one electron and one muon) which passes the identification criteria without isolation.  The value of \pfake{} is given simply as the ratio of the event count with the probe passing isolation to the total number of selected events in the $W$-enriched region.
+
+\section{QCD Background Estimation}
+
+Any analysis performed with CMS must also consider possible contamination from raw multijet events due to the high LHC cross section for pure QCD processes.  Within the context of this analysis, significant contamination from QCD would be highly unlikely due to the nature of the selection criteria.  Most multijet events come from soft interactions which generate little transverse momentum such that the lepton \pt requirements alone significantly reduce the relevant QCD cross section.  Beyond this, the $Z$ mass window and requirement of significant \MET{} provide tight constraints on the kinematics of the event which pure multijet interactions are unlikely to replicate.
+
+The potential of our kinematic selection to suppress QCD is well demonstrated by the \Wjets{} background.  Containing a real \wtolnu{} decay, this process should have a similar \MET distribution to genuine $WZ$ events, so all of our discriminating power comes from the $Z$ mass constraint along with lepton selection requirements sufficient to avoid misidentification of two jets as leptons.  Although \Wjets{} has the highest cross section among MC background samples considered in this analysis, its contribution in the final sample is negligible.  While the cross section for events with three or more jets dwarfs that for \Wjets{} events by approximately four orders of magnitude~\cite{LopezMateos}, the low probability for multijet events to produce substantial \MET while also overcoming lepton selection requirements on an additional jet compensates for the high event rate.
+
+Verifying the above arguments through a direct MC investigation of the expected QCD contribution is not feasible due to the extremely large statistics of simulated QCD data which would be necessary for any reasonable estimation.  An early study of the CMS detector's sensitivity to Technicolor signatures~\cite{CMS-PAS-EXO-09-007}, however, utilized a limited sample of QCD events to measure individual probabilities that a multijet event would yield a $Z$ candidate, a $W$ candidate, or high \lepht.  Treating the probabilities to find a $Z$ or a $W$ as independent and employing selection criteria very similar to that presented here, they conservatively estimate a contribution of less than \SI{0.5}{events/\fbinv} passing all selection criteria in the lowest-mass search windows, a level corresponding to less than 10\% of the total yield from other background processes.
+
+\section{Control Regions}
+\label{sec:control-regions}
+
+The event selection criteria presented in the previous sections of this chapter are each motivated by physical arguments about the differences between signal and background.  As such, the quality of the selection is dependent upon the validity and scope of those arguments, so it is essential to consider some set of orthogonal data regions or tangential event characteristics in order to evaluate whether the selection is comprehensive and well understood.  These investigations are taken as ``controls'' on the selection criteria, verifying that the characteristics of the collision data are sufficiently well-modeled by simulation that the selection criteria can be trusted.
+
+{\newcommand{\myplot}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/#1.\figext}}
+
+\begin{figure*}
+  \centering
+  \myplot{hZMass_ValidZ}\hfill\myplot{hZMass_ValidWZCand}\\
+  \caption[Invariant mass distribution of reconstructed $Z$ candidates for two selections]{Invariant mass distribution for reconstructed $Z$ candidates before a $W$ candidate is selected (left) and after $W$ selection and \MET requirements are applied (right).}
+  \label{fig:control-zmass}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \myplot{hZpt_ValidZ}\hfill\myplot{hZpt_ValidWZCand}\\
+  \caption[Transverse momentum distribution of reconstructed $Z$ candidates for two selections]{Transverse momentum distribution of selected $Z$ candidates before a $W$ candidate is selected (left) and after $W$ selection and \MET requirements are applied (right).}
+  \label{fig:control-zpt}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \myplot{hNJets_ValidZ}\hfill\myplot{hNJets_ValidWZCand}\\
+  \caption[Jet multiplicity distribution for two selections]{Jet multiplicity distribution before a $W$ candidate is selected (left) and after $W$ selection and \MET requirements are applied (right).}
+  \label{fig:control-njets}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \myplot{sreckoplots/jetPtFirst_COMB}\hfill\myplot{sreckoplots/jetPtSecond_COMB}\\
+  \caption[Transverse energy distributions of leading and next-to-leading jets]{Transverse energy distributions of leading (left) and next-to-leading (right) jets before a $W$ candidate is selected.}
+  \label{fig:control-jetet}
+\end{figure*}
+}
+
+Before initial selection of a third lepton to associate with the $W$ decay, the selected data will be composed primarily of events with a real $Z$ boson that may be accompanied by one or more jets.  In this ``pre-$W$'' region, we are first concerned about validating the quality of our $Z$ boson reconstruction as demonstrated by the invariant mass and transverse momentum distributions shown in Figs.~\ref{fig:control-zmass} and~\ref{fig:control-zpt}.  We are also interested in evaluating the quality of jet modeling in this region, since the upcoming $W$ selection criteria are designed primarily to avoid misidentification of a jet as a lepton resulting from a $W$ decay.  The jet multiplicity is given in Fig.~\ref{fig:control-njets} along with the transverse energies of the leading and next-to-leading jets in Fig.~\ref{fig:control-jetet}.
+
+{\newcommand{\myplot}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/#1.\figext}}
+
+\begin{figure*}
+  \centering
+  \myplot{hWTransMass_ValidW}\hfill\myplot{hWTransMass_ValidWZCand}\\
+  \caption[$W$ transverse mass distribution for two selections]{Transverse mass of the selected $W$ candidate before the \MET requirement is applied (left) and after (right).}
+  \label{fig:control-wtransmass}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \myplot{sreckoplots/hHT_3e}\hfill
+  \myplot{sreckoplots/hHT_2e}\\
+  \myplot{sreckoplots/hHT_2mu}\hfill
+  \myplot{sreckoplots/hHT_3mu}\\
+  \caption{Distribution of \lepht{} after the \MET requirement is applied, shown separately for each of the four decay channels.}
+  \label{fig:control-lepht}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \myplot{hWZ3e0muMass_ValidWZCand}\hfill
+  \myplot{hWZ2e1muMass_ValidWZCand}\\
+  \myplot{hWZ1e2muMass_ValidWZCand}\hfill
+  \myplot{hWZ0e3muMass_ValidWZCand}\\
+  \caption{Mass of the $WZ$ candidate after the \MET requirement is applied, shown separately for each of the four decay channels.}
+  \label{fig:control-wzmass}
+\end{figure*}
+
+} % End \myplot region.
+
+After the selection of an isolated lepton for the \wtolnu decay, our primary concern becomes the quality of $W$ candidate modeling and reconstruction.  The distribution of missing transverse energy associated with the escaping neutrino has already been shown in Fig.~\ref{fig:validw-met}, but we now add Fig.~\ref{fig:control-wtransmass} which shows the $W$ boson's transverse mass (as defined in Eq.~\ref{eq:wtransmass}).
+
+After imposing the requirement for significant \MET, the data sample should be dominated by direct SM $WZ$ events with only small contributions from other massive diboson processes.  This ``full $WZ$ selection'' region allows validation of the $WZ$ pair production background before application of analysis-level selection aimed at enhancing sensitivity to a possible massive resonance.  The \lepht{} and $WZ$ invariant mass distributions in this region have been previously presented in Figs.~\ref{fig:ht} and~\ref{fig:mwz}.  As the identification criteria and efficiencies are substantially different for electrons vs.\ muons, however, we also break these distributions down by decay channel in Figs.~\ref{fig:control-lepht} and~\ref{fig:control-wzmass}.
+
+In all cases, the agreement between data and simulation indicates a sufficient understanding of the selected region to lend confidence to our measurements of the $WZ$ system.
+
+% In our case, we evaluate several tangential distributions at various points along the chain of selection criteria.  Figs.~\ref{fig:control-zmass}--\ref{fig:control-njets} show distributions of the $Z$ mass, $Z$ transverse momentum, and jet multiplicity both at the point of the initial $Z$ selection and after the $W$ selection and \MET requirements have been applied.  Fig.~\ref{fig:control-wtransmass} shows the $W$ transverse mass distribution both at the point of the initial $W$ selection and after the \MET requirement has been applied.  Fig.~\ref{fig:control-wzmass} shows the mass of the $WZ$ candidate separately in each of the four channels.  The agreement between data and simulation indicates a good understanding of the selected data region.

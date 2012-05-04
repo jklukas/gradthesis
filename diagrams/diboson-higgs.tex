@@ -1,0 +1,33 @@
+\begin{tikzpicture}[thin, level/.style = {level distance = 1.6cm, line width = 1pt} ]
+  \coordinate 
+  child[grow = west] { 
+    % bottom incoming quark
+    edge from parent [fermion, backwards] node [below = 2pt] {$q$}
+  }
+  child[grow = 30] { 
+    child[grow = 150] {
+      child[grow = west] {
+        % top incoming quark
+        edge from parent [fermion, forwards] node [above = 2pt] {$q$}
+      }
+      child[grow = 30] {
+        edge from parent [fermion, backwards] node [left=2pt, above=0pt] {$q^\prime$}
+      }
+      edge from parent [boson] node [above=4pt, right=0pt] {$W$}
+    }
+    child[grow = east] {
+      child[grow = 30] {
+        edge from parent [boson] node [left = 2pt, above = 2pt] {$W$}
+      }
+      child[grow = -30] {
+        edge from parent [boson] node [left = 2pt, below = 2pt] {$W$}
+      }
+      edge from parent [fermion, forwards] node [below = 0pt] {$H$}
+    }
+    edge from parent [boson] node [below=4pt, right=0pt] {$W$}
+  }
+  child[grow = -30] {
+    edge from parent [fermion, forwards] node [left = 2pt, below=0pt] {$q^\prime$}
+  }
+  ;
+\end{tikzpicture}  

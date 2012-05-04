@@ -1,0 +1,163 @@
+%\documentclass[a4paper,10pt]{book}
+%\usepackage{tikz}
+%\usetikzlibrary{trees}
+%\usetikzlibrary{decorations.pathmorphing}
+%\usetikzlibrary{decorations.markings}
+
+%\include{macros}
+
+%\begin{document}
+
+
+	\begin{tikzpicture}[
+					thick,
+			% Set the overall layout of the tree
+			level/.style={level distance=2.0cm, line width=0.4mm},
+			level 2/.style={level distance=2.0cm},
+			level 3/.style={level distance=2.0cm},
+			level 4/.style={level distance=1.4cm, sibling angle=60}
+	]
+	%% quark and gluon tree
+		\coordinate
+			child[grow=-30]{
+				child[grow=east] {
+					child[grow=60,level distance=1cm] {
+						child[grow=20] {
+							child[grow=60 , level distance=2.5cm] {
+								edge from parent [gluon]	
+							}
+							child[grow=10] {
+								edge from parent [gluon]
+							}
+							edge from parent [gluon]
+						}
+						child[grow=60,level distance=4cm] {
+							edge from parent [fermion]
+						}
+						edge from parent [fermion]
+					}
+					child[grow=-60,level distance=1cm] {
+						child[grow=10,level distance=3.5cm] {
+							edge from parent [gluon]
+						}
+						child[grow=-60,level distance=1cm] {
+							child[grow=0,level distance=2cm] {
+								child[grow=40,level distance=1.2cm] {
+									edge from parent [fermion]
+		   							node[right=10pt] (p3) {}	
+								}
+								child[grow=-40,level distance=1cm] {
+									edge from parent [fermion]
+		   							node[right=5pt] (p1) {}	
+								}
+								edge from parent [gluon]
+							}
+							child[grow=-65,level distance=2cm] {
+								edge from parent [fermion]
+		   						node[right=10pt,below=25pt] (p2) {}	
+							}
+							edge from parent [fermion]
+						}
+						edge from parent [fermion]
+					}
+					edge from parent [boson]
+		   			node[above=3pt] {}           
+		 		}
+				child[grow=210] {
+		   			edge from parent [fermion]
+		   			node[below=3pt] {}
+		 		}
+		 		edge from parent [fermion] node [above=3pt] {}
+			};
+
+%%Proton and hard interaction	
+		\draw[jblue,very thick,decoration={markings,mark=at position 1 with {\arrow[draw=jblue]{>}}}] (-1,0.15) -- (2,0.15) ;
+		\draw[jblue,very thick,decoration={markings,mark=at position 1 with {\arrow[draw=jblue]{>}}}] (-1,0) -- (2,0) ;
+		\draw[jblue,very thick,decoration={markings,mark=at position 0 with {\arrow[draw=jblue]{>}}}] (-1,-0.15) -- (2,-0.15) ;
+		\draw[jblue,very thick,decoration={markings,mark=at position 0 with {\arrow[draw=jblue]{>}}}] (-1,-1.85) -- (2,-1.85) ;
+		\draw[jblue,very thick,decoration={markings,mark=at position 0 with {\arrow[draw=jblue]{>}}}] (-1,-2) -- (2,-2) ;
+		\draw[jblue,very thick,decoration={markings,mark=at position 0 with {\arrow[draw=jblue]{>}}}] (-1,-2.15) -- (2,-2.15) ;
+		\draw[korange,very thick]			(0,0)  circle (0.3cm);
+		\fill[kyelloworange,very thick]	(0,0)  circle (0.3cm);
+		\draw[korange,very thick]			(0,-2)  circle (0.3cm);
+		\fill[kyelloworange,very thick]	(0,-2)  circle (0.3cm);
+	
+%% Arrows from blobs
+		\draw[jblue,very thick,->] (8,-2) -- (9,-1.8) ;
+		\draw[jblue,very thick,->] (7.8,-1.5) -- (8.8,-1.3) ;
+		
+		\begin{scope}[shift={(7.5,0)}]
+		\coordinate
+			child[grow=10,level distance=0.8cm]{
+				child[grow=20,level distance=0.6cm]{
+					child[grow=60,level distance=0.5cm]{	 		
+						edge from parent [jblue,very thick,->] 
+					}	 		
+					child[grow=-30,level distance=0.5cm]{	 		
+						edge from parent [jblue,very thick,->] 
+					}	 			 		
+					edge from parent [jblue,very thick] 
+				}	 		
+				child[grow=-30,level distance=1cm]{	 		
+					edge from parent [jblue,very thick,->] 
+				}	 		
+				edge from parent [fermion] 
+			};
+		\end{scope}
+		
+		\draw[jblue,very thick,->] (7.3,1) -- (8.5,1.2) ;
+		\draw[jblue,very thick,->] (7.,1.4) -- (8.2,1.6) ;
+		
+		\begin{scope}[shift={(6.8,3.)}]
+		\coordinate
+			child[grow=40,level distance=0.8cm]{
+				child[grow=60,level distance=0.5cm]{	
+					edge from parent [jblue,very thick,->] 
+				}	 		
+				child[grow=-20,level distance=0.5cm]{	 		
+					edge from parent [jblue,very thick,->] 
+				}	 		
+				edge from parent [fermion] 
+			};
+		\end{scope}
+		
+		\draw[jblue,very thick,->] (6.5,3.5) -- (6.9,3.9) ;
+
+		%%low blobs arrows
+		\draw[jblue,very thick,->] (7.,-3.5) -- (7.5,-4.1) ;
+		\begin{scope}[shift={(6.5,-3.8)}]
+		\coordinate
+			child[grow=-50,level distance=0.8cm]{
+				child[grow=-60,level distance=0.5cm]{	
+					edge from parent [jblue,very thick,->] 
+				}	 		
+				child[grow=-20,level distance=0.5cm]{	 		
+					edge from parent [jblue,very thick,->] 
+				}	 		
+				edge from parent [fermion] 
+			};
+		\end{scope}
+
+		\draw[jblue,very thick,->] (5.8,-4.2) -- (6.2,-5.) ;
+
+		
+		%% String blobs
+		\node[] (p4) at (7.2,2.8){};
+		\node[] (p5) at (6,3.6){}  ;
+		\path[draw=kpurple,rounded corners=6pt,fill=kpurplelight,rotate=30] (p1) rectangle (p2);%(3cm,10pt);
+		\path[draw=kpurple,rounded corners=6pt,fill=kpurplelight,rotate=100] (p3) rectangle (p4);%(3cm,10pt);
+		\path[draw=kpurple,rounded corners=6pt,fill=kpurplelight,rotate=130] (p4) rectangle (p5);%(3cm,10pt);
+
+	\node[] at (0.0, -3.0) {PDF};
+	\node[] at (2.8, -3.0) {Hard scatter};
+	\node[] at (5.7, -0.6) {Parton shower};
+	\node[] at (8.7, -2.7) {Hadronization};
+	\node[] at (10., -0.9) {Decay};
+
+		\end{tikzpicture}
+		
+		
+	%	\end{document}
+		
+		
+		

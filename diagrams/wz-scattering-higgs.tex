@@ -1,0 +1,43 @@
+\begin{tikzpicture}[thin, level/.style = {level distance = 1.6cm, line width = 1pt} ]
+  \coordinate 
+  child[grow = west] {% bottom-left quark from qqZ vertex
+    edge from parent [fermion, backwards] node [below = 2pt] {$q$}
+  }
+  child[grow = 30] {% initial Z
+    child[grow = north, level distance = 0.7cm] {% Higgs
+      child[grow = 150] {% initial W
+        child[grow = west] {% top-left incoming quark
+          edge from parent [fermion, forwards] node [above = 2pt] {$q^\prime$}
+        }
+        child[grow = 30] {% top-left incoming quark
+          edge from parent [fermion, forwards] node [above = 2pt] {$q$}
+        }
+        edge from parent [boson] node [above = 5pt, right = 0] {$W$}
+      }
+      child[grow = 30] {% final W
+        child[grow = 15] {
+          edge from parent [fermion, forwards] node [above = 0pt] {$\ell$}
+        }
+        child[grow = -15] {
+          edge from parent [fermion, backwards] node [below = 0pt] {$\nu_\ell$}
+        }
+        edge from parent [boson] node [above = 5pt, left = 0] {$W$}
+      }
+      edge from parent [fermion] node [right = 0pt] {$H$}
+    }
+    child[grow = -30] {% final Z
+      child[grow = 15] {
+        edge from parent [fermion, forwards] node [above = 0pt] {$\ell^\prime$}
+      }
+      child[grow = -15] {
+        edge from parent [fermion, backwards] node [below = 0pt] {$\ell^\prime$}
+      }
+      edge from parent [boson] node [below = 5pt, left = 0] {$Z$}
+    }
+    edge from parent [boson] node [below = 5pt, right = 0] {$Z$}
+  }
+  child[grow = -30] {
+    edge from parent [fermion, forwards] node [below = 2pt] {$q$}
+  }
+  ;
+\end{tikzpicture}
