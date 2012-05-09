@@ -1,0 +1,25 @@
+\documentclass[twoside, letterpaper, 10pt, oldfontcommands]{memoir}
+
+\usepackage{uwthesis}
+
+%%%% Set up the page using memoir class commands
+\setstocksize{9in}{6in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\setulmarginsandblock{0.75in}{0.75in}{*}
+\setlrmarginsandblock{0.8in}{0.55in}{*}
+\setheaderspaces{0.5in}{*}{*}
+\checkandfixthelayout
+\SingleSpacing
+
+%%%% Page styles
+\aliaspagestyle{chapter}{empty}
+\pagestyle{ruled}
+
+%%%% Variables
+\newcommand{\plotwidth}{4in}
+\newcommand{\compressedtext}{\small}
+
+\input{thesis-preamble}
+\input{thesis-content}
+
+\end{document}

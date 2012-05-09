@@ -87,7 +87,7 @@ Verifying the above arguments through a direct MC investigation of the expected 
 
 The event selection criteria presented in the previous sections of this chapter are each motivated by physical arguments about the differences between signal and background.  As such, the quality of the selection is dependent upon the validity and scope of those arguments, so it is essential to consider some set of orthogonal data regions or tangential event characteristics in order to evaluate whether the selection is comprehensive and well understood.  These investigations are taken as ``controls'' on the selection criteria, verifying that the characteristics of the collision data are sufficiently well-modeled by simulation that the selection criteria can be trusted.
 
-{\newcommand{\myplot}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/#1.\figext}}
+{\newcommand{\myplot}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/analysis/#1}}
 
 \begin{figure*}
   \centering
@@ -112,7 +112,7 @@ The event selection criteria presented in the previous sections of this chapter 
 
 \begin{figure*}
   \centering
-  \myplot{sreckoplots/jetPtFirst_COMB}\hfill\myplot{sreckoplots/jetPtSecond_COMB}\\
+  \myplot{jetPtFirst_COMB}\hfill\myplot{jetPtSecond_COMB}\\
   \caption[Transverse energy distributions of leading and next-to-leading jets]{Transverse energy distributions of leading (left) and next-to-leading (right) jets before a $W$ candidate is selected.}
   \label{fig:control-jetet}
 \end{figure*}
@@ -120,7 +120,7 @@ The event selection criteria presented in the previous sections of this chapter 
 
 Before initial selection of a third lepton to associate with the $W$ decay, the selected data will be composed primarily of events with a real $Z$ boson that may be accompanied by one or more jets.  In this ``pre-$W$'' region, we are first concerned about validating the quality of our $Z$ boson reconstruction as demonstrated by the invariant mass and transverse momentum distributions shown in Figs.~\ref{fig:control-zmass} and~\ref{fig:control-zpt}.  We are also interested in evaluating the quality of jet modeling in this region, since the upcoming $W$ selection criteria are designed primarily to avoid misidentification of a jet as a lepton resulting from a $W$ decay.  The jet multiplicity is given in Fig.~\ref{fig:control-njets} along with the transverse energies of the leading and next-to-leading jets in Fig.~\ref{fig:control-jetet}.
 
-{\newcommand{\myplot}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/#1.\figext}}
+{\newcommand{\myplot}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/analysis/#1}}
 
 \begin{figure*}
   \centering
@@ -131,10 +131,10 @@ Before initial selection of a third lepton to associate with the $W$ decay, the 
 
 \begin{figure*}
   \centering
-  \myplot{sreckoplots/hHT_3e}\hfill
-  \myplot{sreckoplots/hHT_2e}\\
-  \myplot{sreckoplots/hHT_2mu}\hfill
-  \myplot{sreckoplots/hHT_3mu}\\
+  \myplot{hHT_3e}\hfill
+  \myplot{hHT_2e}\\
+  \myplot{hHT_2mu}\hfill
+  \myplot{hHT_3mu}\\
   \caption{Distribution of \lepht{} after the \MET requirement is applied, shown separately for each of the four decay channels.}
   \label{fig:control-lepht}
 \end{figure*}

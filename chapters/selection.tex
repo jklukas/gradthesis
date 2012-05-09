@@ -72,11 +72,11 @@ All electrons must be within the detector acceptance ($|\eta| < 2.5$) and meet s
 \begin{figure*}[p]
   \centering
   \newcommand{\mywidth}{0.47\textwidth}
-  \newcommand{\mygraph}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/#1.\figext}}
-  \mygraph{lepcuts100/hb_pt}\hfill\mygraph{lepcuts10/hb_iso}\\
-  \mygraph{lepcuts100/hb_detain}\hfill\mygraph{lepcuts100/hb_dphiin}\\
-  \mygraph{lepcuts100/hb_nmiss}\hfill\mygraph{lepcuts100/hb_sieie}\\
-  \mygraph{lepcuts100/hb_dist}\hfill\mygraph{lepcuts100/hb_dcot}\\
+  \newcommand{\mygraph}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/leptoncuts/#1}}
+  \mygraph{scale100/hb_pt}\hfill\mygraph{scale10/hb_iso}\\
+  \mygraph{scale100/hb_detain}\hfill\mygraph{scale100/hb_dphiin}\\
+  \mygraph{scale100/hb_nmiss}\hfill\mygraph{scale100/hb_sieie}\\
+  \mygraph{scale100/hb_dist}\hfill\mygraph{scale100/hb_dcot}\\
   \caption[Distributions of criteria used to select barrel electrons]{Distributions of criteria used to select barrel electrons, considering all remaining candidates with $\et > \sienergy{20}$ after a \ztoll{} decay is identified.  Collision data (composed mostly of jets) is compared to simulated $WZ$ events (composed mostly of true electrons) to show the discriminating power of each requirement.  Shaded areas indicate excluded regions; when two different depths of shading are used, the lighter one indicates a region of conditional exclusion as described in Table~\ref{tab:electron-requirements}.}
   \label{fig:electron-cuts-hb}
 \end{figure*}
@@ -84,11 +84,11 @@ All electrons must be within the detector acceptance ($|\eta| < 2.5$) and meet s
 \begin{figure*}[p]
   \centering
   \newcommand{\mywidth}{0.47\textwidth}
-  \newcommand{\mygraph}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/#1.\figext}}
-  \mygraph{lepcuts100/he_pt}\hfill\mygraph{lepcuts10/he_iso}\\
-  \mygraph{lepcuts100/he_detain}\hfill\mygraph{lepcuts100/he_dphiin}\\
-  \mygraph{lepcuts100/he_nmiss}\hfill\mygraph{lepcuts100/he_sieie}\\
-  \mygraph{lepcuts100/he_dist}\hfill\mygraph{lepcuts100/he_dcot}\\
+  \newcommand{\mygraph}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/leptoncuts/#1}}
+  \mygraph{scale100/he_pt}\hfill\mygraph{scale10/he_iso}\\
+  \mygraph{scale100/he_detain}\hfill\mygraph{scale100/he_dphiin}\\
+  \mygraph{scale100/he_nmiss}\hfill\mygraph{scale100/he_sieie}\\
+  \mygraph{scale100/he_dist}\hfill\mygraph{scale100/he_dcot}\\
   \caption[Distributions of criteria used to select endcap electrons]{Distributions of criteria used to select endcap electrons, considering all remaining candidates with $\et > \sienergy{20}$ after a \ztoll{} decay is identified.  Collision data (composed mostly of jets) is compared to simulated $WZ$ events (composed mostly of true electrons) to show the discriminating power of each requirement.  Shaded areas indicate excluded regions; when two different depths of shading are used, the lighter one indicates a region of conditional exclusion as described in Table~\ref{tab:electron-requirements}.}
   \label{fig:electron-cuts-he}
 \end{figure*}
@@ -150,11 +150,11 @@ The muon selection follows a requirement-based approach similar to that used for
 
 \begin{figure*}[p]
   \centering
-  \newcommand{\mygraph}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/#1.\figext}}
-  \mygraph{lepcuts100/hm_pt}\hfill\mygraph{lepcuts10/hm_iso}\\
-  \mygraph{lepcuts10/hm_npix}\hfill\mygraph{lepcuts10/hm_ntrk}\\
-  \mygraph{lepcuts10/hm_nmuo}\hfill\mygraph{lepcuts10/hm_nseg}\\
-  \mygraph{lepcuts10/hm_chi2}\hfill\mygraph{lepcuts10/hm_d0}\\
+  \newcommand{\mygraph}[1]{\includegraphics[width=0.49\textwidth]{matplotlib/leptoncuts/#1}}
+  \mygraph{scale100/hm_pt}\hfill\mygraph{scale10/hm_iso}\\
+  \mygraph{scale10/hm_npix}\hfill\mygraph{scale10/hm_ntrk}\\
+  \mygraph{scale10/hm_nmuo}\hfill\mygraph{scale10/hm_nseg}\\
+  \mygraph{scale10/hm_chi2}\hfill\mygraph{scale10/hm_d0}\\
   \caption[Distributions of criteria used to select muons]{Distributions of criteria used to select muons, considering all remaining candidates with $\pt > \simomentum{20}$ after a \ztoll{} decay is identified.  Collision data (composed mostly of jets) is compared to simulated $WZ$ events (composed mostly of true muons) to show the discriminating power of each requirement.  Shaded areas indicate excluded regions; the lighter shaded region in the $R_\text{iso}$ distribution is excluded only when considering a \wtomunu{} decay.}
   \label{muon-cuts}
 \end{figure*}
@@ -180,21 +180,21 @@ To reject a large fraction of events without a genuine $W$ decay, we require tha
 
 \begin{figure}
   \centering
-  \includegraphics[width=\plotwidth]{matplotlib/hZMass_ValidW}
+  \includegraphics[width=\plotwidth]{matplotlib/analysis/hZMass_ValidW}
   \caption{Reconstructed mass of the $Z$ boson candidate for events with an extra isolated lepton passing requirements for the $W$.}
   \label{fig:validw-zmass}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\plotwidth]{matplotlib/hMET_ValidW}
+  \includegraphics[width=\plotwidth]{matplotlib/analysis/hMET_ValidW}
   \caption{Distribution of missing transverse energy for events with a valid $Z$ candidate and an extra isolated lepton passing requirements for the $W$.}
   \label{fig:validw-met}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\plotwidth]{matplotlib/hWTransMass_ValidW}
+  \includegraphics[width=\plotwidth]{matplotlib/analysis/hWTransMass_ValidW}
   \caption{Transverse mass of the $W$ boson candidate for events with a valid $Z$ candidate and an extra isolated lepton passing requirements for the $W$.}
   \label{fig:validw-transmass}
 \end{figure}
@@ -211,31 +211,18 @@ In addition to the invariant mass distinction, we expect that $WZ$ events origin
 \end{equation}
 where $i$ iterates over the three charged leptons associated with the \ztoll and \wtolnu decays.
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\plotwidth]{figures/plot-complex-angle}
-%   \caption{Distribution of the complex angle for the potential solutions to the quadratic equation for $p_z(\nu)$ under the nominal $M(W)$ assumption.  The large central peak corresponds to real solutions with fewer than 5\% of events having an imaginary component.}
-%   \label{fig:complex-angle}
-% \end{figure}
-
-% We define the transverse mass of the $WZ$ system~\cite{Belyaev:2007ss}:
-% \begin{equation}
-%   \label{eq:wzmt}
-%   M^2_\text{T}(WZ) = (\sqrt{M^2(\ell\ell\ell) + \pt^2(\ell\ell\ell)} + |\MET|)^2 -|\pt(\ell\ell\ell) + \MET|^2. 
-% \end{equation}
-
 We use requirements on the $M(WZ)$ and \lepht distributions to achieve further separation between resonant particles and SM $WZ$ production.  The mass windows and minimum \lepht values are determined separately for each simulated mass point, optimizing for the best expected limit.  The distributions of \lepht and invariant mass for selected $WZ$ candidates are shown in figures~\ref{fig:ht} and~\ref{fig:mwz}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\plotwidth]{matplotlib/hHt_ValidWZCand}
+  \includegraphics[width=\plotwidth]{matplotlib/analysis/hHt_ValidWZCand}
   \caption{Distribution of \lepht in simulated samples and collision data.}
   \label{fig:ht}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\plotwidth]{matplotlib/hWZMass_ValidWZCand}
+  \includegraphics[width=\plotwidth]{matplotlib/analysis/hWZMass_ValidWZCand}
   \caption{Distribution of $WZ$ invariant mass in simulated samples and collision data.}
   \label{fig:mwz}
 \end{figure}
