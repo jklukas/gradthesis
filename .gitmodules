@@ -1,0 +1,3 @@
+[submodule "uwthesis"]
+	path = uwthesis
+	url = git://github.com/jklukas/uwthesis
