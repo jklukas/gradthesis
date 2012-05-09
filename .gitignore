@@ -5,3 +5,7 @@
 *.lof
 *.lot
 *.out
+*.pyc
+*.bbl
+*.blg
+*.brf
