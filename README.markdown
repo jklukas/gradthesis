@@ -10,16 +10,35 @@ For my own sanity, I want to document how to pull in the `uwthesis` content as a
 
 # Typography
 
-
+The fonts are set up in `myfonts.sty` which assumes XeTeX rather than plain LaTeX.  XeTeX supports Unicode input and provides an interface to fonts installed on the system.  In my case, I'm using Adobe's Minion Pro and Myriad Pro for roman and sans-serif text.  The sans-serif is additional set to a bold weight and red color in order to increase the contrast with the normal running text.
 
 # Bibliography
 
+Many of the papers I cite are available on arXiv.org.  Several BibTeX styles have been developed which can take arXiv eprint references and render them as clickable links.  You can learn more from [the arXiv documentation](http://arxiv.org/hypertex/bibstyles/).
+
 # Figures
+
+In many fields of physics, all of our data analysis takes place in ROOT.  While ROOT has a graphical interface, it is limited in terms of how much control is available over your output.  I wanted to produce figures with fonts matching the rest of the document.  The python library [matplotlib](http://matplotlib.sourceforge.net/) provides the flexibility needed as well as the option to integrate with your system's LaTeX installation.  This required generating a LaTeX-compatible installation of the Minion Pro font, a process aided and documented by the [MinionPro](http://www.ctan.org/tex-archive/fonts/minionpro/) package on CTAN.
+
+To get histograms from ROOT files into matplotlib, I used the [rootpy](https://github.com/rootpy/rootpy) project.
+
+I produced Feynman diagrams using the [tikz](http://pgf.sourceforge.net/) graphics system for TeX.  It's not the most user-friendly thing to use and the code ends up being a bit mysterious, but the output matches perfectly with the rest of the document.
 
 # Layouts
 
+While the `uwthesis` style file sets up a style according to UW-Madison's requirements for a dissertation, it is not necessarily the most appealing format.  Double spacing is particularly ugly and the use of a single column on standard letter paper requires a large font.
+
+I developed two alternative styles: a two-column format suitable for printing on letter paper and being read by actual humans, and a single-column trade format.  More on the trade version below.
+
+Note that the `figure` and `table` environments, etc. each have a starred version (`figure*`).  These are identical in single-column layouts, but differ for two-column layouts.  The standard versions will be placed within a column while the starred versions will span the entire text width, appearing either at the top or bottom of a page or on a separate page of figures.
+
 # Bound Copies
+
+When you submit your thesis, ProQuest will offer to send you bound copies at a cost of nearly $100/item.  These will be unwieldy, letter-sized tomes, although they do now print in color.
+
+I wanted to produce a cheaper, smaller bound copy.  After asking around for a while, it seems like [lulu.com](http://lulu.com) is the standard place to do self-publishing at the moment.  I designed the trade-sized format of the thesis according to specifications from lulu.  Black-and-white printing with a color cover costs less than $10 per copy and I found their customer service to be excellent.
 
 # Other
 
-Line numbering, tikz, compressing
+My final PDF files coming out of XeTeX are on the order of 80 MB in size, almost entirely due to the embedding of fonts in the matplotlib figures.  Adobe Acrobat Pro has the `File > Save As > Reduced Size PDF` option, which successfully identifies the duplicated fonts and spits out a file of identical quality that's more than ten times smaller.
+
